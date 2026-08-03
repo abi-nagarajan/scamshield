@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ScamShield | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-brand">🛡️ ScamShield</div>
+    <div class="nav-right">
+        <span id="userEmail" class="nav-email"></span>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
+</nav>
+
+<div class="dashboard">
+    <div class="dashboard-header">
+        <h1>Scan a Job Offer</h1>
+        <p class="subtitle">Paste any job/internship offer below to check for scam signals</p>
+    </div>
+
+    <div class="card">
+        <div class="input-group">
+            <label>Company Name (optional)</label>
+            <input type="text" id="companyName" placeholder="e.g. TechCorp Solutions">
+        </div>
+        <textarea id="offerText" placeholder="Paste the full job offer, message, or email here..."></textarea>
+        <button id="scanBtn" class="primary-btn">🔍 Scan for Scam Signals</button>
+        <div class="divider">— or —</div>
+
+        <div class="input-group">
+            <label>Upload a PDF offer letter instead</label>
+            <input type="file" id="pdfFile" accept="application/pdf">
+        </div>
+        <button id="uploadBtn" class="primary-btn secondary-style">📄 Scan Uploaded PDF</button>
+        <div id="pdfResult" class="result hidden">
+            <div id="pdfVerdictBadge" class="verdict"></div>
+            <div class="score-row">
+                <span id="pdfScoreText"></span>
+            </div>
+            <h3>Why it was flagged:</h3>
+            <ul id="pdfReasonsList"></ul>
+        </div>
+
+
+        <div id="result" class="result hidden">
+            <div id="verdictBadge" class="verdict"></div>
+            <div class="score-row">
+                <span id="scoreText"></span>
+            </div>
+            <h3>Why it was flagged:</h3>
+            <ul id="reasonsList"></ul>
+        </div>
+    </div>
+    <div class="card">
+        <h2>🏢 Check Company Reputation</h2>
+        <div class="input-group">
+            <input type="text" id="lookupCompany" placeholder="Enter company name to check">
+        </div>
+        <button id="lookupBtn" class="primary-btn">Check Reputation</button>
+        <div id="reputationResult" class="reputation-result hidden"></div>
+    </div>
+
+    <div class="card history-card">
+        <h2>Scan History</h2>
+        <div id="historyList"></div>
+    </div>
+</div>
+
+<script src="auth.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
